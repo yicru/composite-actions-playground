@@ -1,0 +1,27 @@
+name: Sample Composite Action
+description: Sample Composite Action
+
+inputs:
+  sample1:
+    required: false
+    description: 'sample1'
+  sample2:
+    required: false
+    description: 'sample2'
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - if: ${{ secrets.sample1 }}
+      run: |
+        echo "sample1: ${{{ secrets.sample1 }}}"
+      shell: bash
+
+    - if: ${{ secrets.sample2 }}
+      run: |
+        echo "sample2: ${{{ secrets.sample2 }}}"
+      shell: bash
+
