@@ -15,12 +15,12 @@ runs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - if: ${{ secrets.sample1 }}
+    - if: ${{ inputs.sample1 }}
       run: |
         echo "sample1: ${{ inputs.sample1 }}"
       shell: bash
 
-    - if: ${{ secrets.sample2 }}
+    - if: ${{ inputs.sample2 }}
       run: |
         echo "sample2: ${{ inputs.sample2 }}"
       shell: bash
