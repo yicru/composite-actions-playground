@@ -17,11 +17,11 @@ runs:
 
     - if: ${{ secrets.sample1 }}
       run: |
-        echo "sample1: ${{{ secrets.sample1 }}}"
+        echo "sample1: ${{{ inputs.sample1 }}}"
       shell: bash
 
     - if: ${{ secrets.sample2 }}
       run: |
-        echo "sample2: ${{{ secrets.sample2 }}}"
+        echo "sample2: ${{{ inputs.sample2 }}}"
       shell: bash
 
